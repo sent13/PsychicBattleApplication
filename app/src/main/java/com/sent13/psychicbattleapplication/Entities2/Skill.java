@@ -7,12 +7,15 @@ import java.util.ArrayList;
  * スキルクラス
  */
 
-public class Skill {
-    private String skillName;       //スキル名
-    private ArrayList<Effect> effects;  //スキルの効果のリスト
+public class Skill extends Can{
 
-    public Skill(String skillName,ArrayList<Effect> effects){
-        this.skillName=skillName;
-        this.effects=effects;
+    //効果が１つしかない場合
+    public Skill(String name,Effect effect){
+        super(name,Can.PRIORITY,effect);
     }
+
+    public Skill(String name,ArrayList<Effect> effects){
+        super(name,Can.PRIORITY,effects);
+    }
+
 }

@@ -7,18 +7,15 @@ import java.util.ArrayList;
  * 技クラス
  */
 
-public class Waza {
-    public static final int NORMAL_PRIORITY=1;
-    public static final int PRIORITY=2;
-    public static final int MOST_PRIORITY=3;
+public class Waza extends Can{
 
-    private String wazaName;        //技名
-    private int priority;           //技の優先度
-    private ArrayList<Effect> effects;  //技の効果のリスト
-
-    public Waza(String wazaName,int priority,ArrayList<Effect> effects){
-        this.wazaName=wazaName;
-        this.priority=priority;
-        this.effects=effects;
+    //効果が１つしかない場合
+    public Waza(String name,int priority,Effect effect){
+        super(name,priority,effect);
     }
+
+    public Waza(String name,int priority,ArrayList<Effect> effects){
+        super(name, priority, effects);
+    }
+
 }
